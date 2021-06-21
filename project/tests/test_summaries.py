@@ -137,7 +137,7 @@ def test_update_summary_incorrect_id(test_app_with_db):
     assert response.json()["detail"] == "Summary not found"
 
     response = test_app_with_db.put(
-        f"/summaries/0/",
+        "/summaries/0/",
         data=json.dumps({"url": "https://foo.bar", "summary": "updated!"}),
     )
     assert response.status_code == 422
